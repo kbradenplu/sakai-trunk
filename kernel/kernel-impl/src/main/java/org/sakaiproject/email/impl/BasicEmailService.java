@@ -1325,10 +1325,6 @@ public class BasicEmailService implements EmailService
 				// attach the file to the message
 				MimeBodyPart mbp = createAttachmentPart(attachment);
 				int mbpSize = mbp.getSize();
-				if (mbpSize < 0)
-				{  
-				        log.warn("Unexpected MIME body part size: " + mbpSize);
-				}
 				if ( (attachmentRunningTotal + mbpSize) < maxAttachmentSize )
 				{
 					embeddedAttachments.add(mbp);
